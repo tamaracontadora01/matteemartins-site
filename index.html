@@ -126,6 +126,22 @@ textarea { min-height: 110px; resize: vertical; }
 form button { font: inherit; font-weight: 600; padding: 13px; border: 0; border-radius: 4px; background: var(--accent); color: var(--bg); cursor: pointer; }
 .form-msg { font-size: 14px; color: var(--accent); }
 
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; list-style: none; margin: 0; padding: 0; counter-reset: step; }
+.steps li { display: grid; gap: 10px; align-content: start; border-top: 1px solid var(--line); padding-top: 20px; min-width: 0; }
+.steps li::before { counter-increment: step; content: "0" counter(step); font-family: var(--mono); font-size: 13px; color: var(--brass); }
+.steps h3 { font-size: 24px; }
+.steps p { color: var(--muted); }
+.essence { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.essence > div { display: grid; gap: 10px; align-content: start; min-width: 0; }
+.essence h3 { font-size: 22px; }
+.essence p { color: var(--muted); }
+.values { display: flex; flex-wrap: wrap; gap: 8px; }
+.values span { border: 1px solid var(--line); border-radius: 3px; padding: 4px 10px; font-size: 14px; color: var(--ink); }
+.clients { display: flex; flex-wrap: wrap; gap: 10px 14px; list-style: none; margin: 0; padding: 0; }
+.clients li { font-family: var(--display); font-size: 20px; color: var(--ink); padding: 10px 18px; border: 1px solid var(--line); border-radius: 4px; background: var(--surface); }
+.alt { background: var(--surface); border-block: 1px solid var(--line); }
+@media (max-width: 860px) { .steps, .essence { grid-template-columns: 1fr; } }
+
 footer { background: #06213d; color: #c9d6e3; border-top: 1px solid var(--line); }
 footer .wrap { padding-block: 36px; display: flex; justify-content: space-between; align-items: center; gap: 20px 32px; flex-wrap: wrap; font-size: 14px; }
 footer img { width: 340px; max-width: 100%; height: auto; display: block; }
@@ -158,6 +174,7 @@ footer .legal { display: grid; gap: 4px; text-align: right; }
     </a>
     <nav aria-label="Seções">
       <a href="#sobre">Sobre</a>
+      <a href="#como-trabalhamos">Método</a>
       <a href="#servicos">Serviços</a>
       <a href="#socios">Sócios</a>
       <a href="#contato">Contato</a>
@@ -206,6 +223,35 @@ footer .legal { display: grid; gap: 4px; text-align: right; }
           <div><b>+40 anos</b><span>De experiência somada dos sócios</span></div>
           <div><b>Atendimento pessoal</b><span>Sempre com os próprios sócios</span></div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="como-trabalhamos">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Como trabalhamos</p>
+        <h2>Resultado se constrói com método e presença</h2>
+        <p>Mergulhamos na realidade da empresa antes de propor qualquer mudança. Cada etapa é conduzida pelos próprios sócios.</p>
+      </div>
+      <ol class="steps">
+        <li><h3>Diagnóstico</h3><p>Conhecemos a operação, as pessoas e os números. Identificamos onde a empresa ganha, onde perde e o que falta para decidir com segurança.</p></li>
+        <li><h3>Estruturação</h3><p>Organizamos a informação, ajustamos processos e controles e montamos as ferramentas de acompanhamento: orçamento, custos, DRE gerencial e painéis.</p></li>
+        <li><h3>Acompanhamento</h3><p>Seguimos junto com a gestão, analisando resultados, apontando desvios e propondo alternativas, até a nova rotina fazer parte do dia a dia.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec alt" id="essencia">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Nossa essência</p>
+        <h2>O que nos move</h2>
+      </div>
+      <div class="essence">
+        <div><p class="label">Propósito</p><h3>Dar clareza aos números</h3><p>Para que empresários e gestores decidam com segurança e façam seus negócios crescerem de forma sustentável.</p></div>
+        <div><p class="label">Visão</p><h3>Ser parceiros de longo prazo</h3><p>Ser reconhecidos como a assessoria que está ao lado da gestão em cada decisão importante, da estruturação à expansão.</p></div>
+        <div><p class="label">Valores</p><h3>Como trabalhamos todos os dias</h3><div class="values"><span>Proximidade</span><span>Rigor técnico</span><span>Integridade</span><span>Simplicidade</span></div></div>
       </div>
     </div>
   </section>
@@ -291,6 +337,13 @@ footer .legal { display: grid; gap: 4px; text-align: right; }
           </div>
         </div>
       </div>
+      <div class="sec-head" style="margin-top: 24px;">
+        <p class="label">Trajetória</p>
+        <h3 style="font-size: 26px;">Já atuamos como executivos ou consultores em empresas como</h3>
+      </div>
+      <ul class="clients">
+        <li>JBS</li><li>Seara</li><li>Doux Frangosul</li><li>Grupo Hoff</li><li>Dilly Sports</li><li>Grupo Priority</li><li>Dambroz</li>
+      </ul>
     </div>
   </section>
 
