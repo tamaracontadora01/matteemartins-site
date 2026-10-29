@@ -512,13 +512,11 @@ document.getElementById('form-contato').addEventListener('submit', function (e) 
     if (modo === 'sol') root.setAttribute('data-modo', 'sol'); else root.removeAttribute('data-modo');
     document.querySelectorAll('.modo button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.modo === (modo === 'sol' ? 'sol' : 'lua'))); });
   }
-  var salvo = null;
-  try { salvo = localStorage.getItem('mm-modo'); } catch (e) {}
-  aplicar(salvo);
+  // Regra: o site sempre abre na versão Lua (azul); a Sol só vale enquanto o visitante escolher.
+  aplicar('lua');
   document.querySelectorAll('.modo button').forEach(function (b) {
     b.addEventListener('click', function () {
       aplicar(b.dataset.modo);
-      try { localStorage.setItem('mm-modo', b.dataset.modo); } catch (e) {}
     });
   });
 })();
