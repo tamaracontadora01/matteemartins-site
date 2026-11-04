@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.matteemartins.com.br/sitemap.xml
